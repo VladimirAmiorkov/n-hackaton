@@ -12,6 +12,7 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
+    let URL_HEROES = "https://raw.githubusercontent.com/VladimirAmiorkov/n-hackaton/master/data/data.json";
 
 
     override func viewDidLoad() {
@@ -32,33 +33,30 @@ class MasterViewController: UITableViewController {
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
         
-        getCarsData();
+        getJsonFromUrl();
     }
     
-    func getCarsData(){
-        let url = URL(string: "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/cars.json")
-        var items = [Car]()
-        URLSession.shared.dataTask(with:url!, completionHandler: {(data, response, error) in
-            guard let data = data, error == nil else { return }
-            do {
-                let stud = try! JSONDecoder().decode(AnyDecodable.self, from: data).value as! [String: Any]
-                stud.forEach({ (key, values) in
-                    let cars = values as! Dictionary<String, [String: Any]>
-                    cars.forEach({ (key, car) in
-                        let item = Car(dictionary: car)
-                        items.append(item)
-                    })
-                    DispatchQueue.main.async {
-                        items.forEach({ item in
-                            self.insertNewObject(item)
-                        })
+    func getJsonFromUrl(){
+        let url = URL(string: "https://raw.githubusercontent.com/VladimirAmiorkov/n-hackaton/master/data/data.json")
+        URLSession.shared.dataTask(with: (url)!, completionHandler: {(data, response, error) -> Void in
+            if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
+                var items = [Car]()
+                if let carsArray = jsonObj!.value(forKey: "cars") as? NSArray {
+                    for car in carsArray {
+                        if let carDict = car as? NSDictionary {
+                            let item = Car(dictionary: carDict)
+                            items.append(item)
+                        }
                     }
-                    
+                }
+                
+                OperationQueue.main.addOperation({
+                    items.forEach({ item in
+                        self.insertNewObject(item)
+                    })
                 })
             }
         }).resume()
-        
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -139,7 +137,7 @@ struct Car: CustomStringConvertible {
     let price: NSInteger
     let seats: NSInteger
     let transmission: String
-    init(dictionary: [String: Any]) {
+    init(dictionary: NSDictionary) {
         self.carClass = dictionary["class"] as? String ?? ""
         self.doors = dictionary["doors"] as? Int ?? 0
         self.hasAc = dictionary["hasAc"] as? Bool ?? false
@@ -155,50 +153,5 @@ struct Car: CustomStringConvertible {
     
     var description: String {
         return name
-    }
-}
-
-// Generic decoder. TODO: See if there isn't a easier way of parsing/decoding the json data
-public struct AnyDecodable: Decodable {
-    public var value: Any
-    
-    private struct CodingKeys: CodingKey {
-        var stringValue: String
-        var intValue: Int?
-        init?(intValue: Int) {
-            self.stringValue = "\(intValue)"
-            self.intValue = intValue
-        }
-        init?(stringValue: String) { self.stringValue = stringValue }
-    }
-    
-    public init(from decoder: Decoder) throws {
-        if let container = try? decoder.container(keyedBy: CodingKeys.self) {
-            var result = [String: Any]()
-            try container.allKeys.forEach { (key) throws in
-                result[key.stringValue] = try container.decode(AnyDecodable.self, forKey: key).value
-            }
-            value = result
-        } else if var container = try? decoder.unkeyedContainer() {
-            var result = [Any]()
-            while !container.isAtEnd {
-                result.append(try container.decode(AnyDecodable.self).value)
-            }
-            value = result
-        } else if let container = try? decoder.singleValueContainer() {
-            if let intVal = try? container.decode(Int.self) {
-                value = intVal
-            } else if let doubleVal = try? container.decode(Double.self) {
-                value = doubleVal
-            } else if let boolVal = try? container.decode(Bool.self) {
-                value = boolVal
-            } else if let stringVal = try? container.decode(String.self) {
-                value = stringVal
-            } else {
-                throw DecodingError.dataCorruptedError(in: container, debugDescription: "the container contains nothing serialisable")
-            }
-        } else {
-            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Could not serialise"))
-        }
     }
 }
