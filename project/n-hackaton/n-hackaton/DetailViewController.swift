@@ -17,8 +17,11 @@ class DetailViewController: UIViewController {
         // Update the user interface for the detail item.
         if let detail = detailItem {
             if let label = detailDescriptionLabel {
+                // TODO: Implement rich UI here
                 label.text = detail.description
             }
+            
+            navigationItem.title = detail.name;
         }
     }
 
@@ -33,7 +36,7 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    var detailItem: NSDate? {
+    var detailItem: Car? {
         didSet {
             // Update the view.
             configureView()
