@@ -15,6 +15,7 @@ class MasterViewController: UITableViewController {
     let URL_HEROES = "https://raw.githubusercontent.com/VladimirAmiorkov/n-hackaton/master/data/data.json";
     let scaledDownImageWidth = 100;
     let scaledDownImageHeight = 83;
+    let mainBackgroundColor = UIColor.lightGray
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +34,9 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        
-        // TODO: Change the separator according to thedesign
+
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        tableView.backgroundColor = mainBackgroundColor
         
         getJsonFromUrl();
     }
@@ -74,8 +75,8 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ item: Car) {
-        objects.insert(item, at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
+        objects.insert(item, at: objects.endIndex)
+        let indexPath = IndexPath(row: objects.endIndex - 1, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
 
@@ -111,13 +112,39 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MasterTableViewCell
+        cell.selectionStyle = .none
+        if (indexPath.row > 0) {
+            let width = self.navigationController?.view.bounds.width;
+            let cellSeparator = UIView(frame: CGRect(x: 0, y: 0, width: width!, height: 10))
+            cellSeparator.backgroundColor = mainBackgroundColor
+            cell.addSubview(cellSeparator)
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+        } else {
+            for view in cell.subviews {
+                if (view .isKind(of: UIView.self) && view.backgroundColor == mainBackgroundColor) {
+                    view.removeFromSuperview()
+                }
+            }
+            
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+        }
+        
         cell.separator.frame.size.width = (self.navigationController?.view.bounds.width)!
         let object = objects[indexPath.row] as! Car
         cell.nameLabel!.text = object.name
+        cell.classLabel!.text = object.carClass
+        cell.transitionLabel.text = object.transmission + " Transition"
+        var hasAcText = "No"
+        if (object.hasAc) {
+            hasAcText = "Yes"
+        }
+        
+        cell.acLabel.text = hasAcText
         cell.priceLabel!.text = String(object.price) + "/day"
         let resizedPlaceholderImage = self.resizedImage(image: UIImage(named: "car-placeholder")!, newSize: CGSize(width: self.scaledDownImageWidth, height: self.scaledDownImageHeight))
         cell.imageView?.image = resizedPlaceholderImage
-
         URLSession.shared.dataTask(with: NSURL(string: object.imageUrl)! as URL, completionHandler: { (data, response, error) -> Void in
             
             if error != nil {
@@ -137,7 +164,6 @@ class MasterViewController: UITableViewController {
 //                cell.imageView?.image = image
 //            })
         }).resume()
-        // TODO: implement the rich UI here for the list item template
         
         return cell
     }
@@ -190,7 +216,7 @@ struct Car: CustomStringConvertible {
     init(dictionary: NSDictionary) {
         self.carClass = dictionary["class"] as? String ?? ""
         self.doors = dictionary["doors"] as? Int ?? 0
-        self.hasAc = dictionary["hasAc"] as? Bool ?? false
+        self.hasAc = dictionary["hasAC"] as? Bool ?? false
         self.id = dictionary["id"] as? String ?? ""
         self.imageStoragePath = dictionary["imageStoragePath"] as? String ?? ""
         self.imageUrl = dictionary["imageUrl"] as? String ?? ""
@@ -211,5 +237,7 @@ class MasterTableViewCell: UITableViewCell {
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var separator: UIView!
-    
+    @IBOutlet weak var classLabel: UILabel!
+    @IBOutlet weak var transitionLabel: UILabel!
+    @IBOutlet weak var acLabel: UILabel!
 }
