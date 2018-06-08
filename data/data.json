@@ -3,7 +3,7 @@
         {
             "class": "Luxury",
             "doors": 2,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car1",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -16,7 +16,7 @@
         {
             "class": "Luxury",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car2",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -29,7 +29,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car3",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -42,7 +42,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car4",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -55,7 +55,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car5",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -68,7 +68,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car6",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -81,7 +81,7 @@
         {
             "class": "Luxury",
             "doors": 2,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car7",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -94,7 +94,7 @@
         {
             "class": "Luxury",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car8",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -107,7 +107,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car9",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -120,7 +120,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car10",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -133,7 +133,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car11",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -146,7 +146,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car12",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -159,7 +159,7 @@
         {
             "class": "Luxury",
             "doors": 2,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car13",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -172,7 +172,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car14",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -185,7 +185,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car15",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -198,7 +198,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car16",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -211,7 +211,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car17",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -224,7 +224,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car18",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -237,7 +237,7 @@
         {
             "class": "Luxury",
             "doors": 4,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car19",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -250,7 +250,7 @@
         {
             "class": "Luxury",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car20",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -263,7 +263,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car21",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -276,7 +276,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car22",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -289,7 +289,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car23",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -302,7 +302,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car24",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -315,7 +315,7 @@
         {
             "class": "Luxury",
             "doors": 2,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car25",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -328,7 +328,7 @@
         {
             "class": "Luxury",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car26",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -341,7 +341,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car27",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -354,7 +354,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car28",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -367,7 +367,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car29",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -380,7 +380,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car30",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -393,7 +393,7 @@
         {
             "class": "Luxury",
             "doors": 2,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car31",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -406,7 +406,7 @@
         {
             "class": "Luxury",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car32",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -419,7 +419,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car33",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -432,7 +432,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car34",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -445,7 +445,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car35",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -458,7 +458,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car36",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -471,7 +471,7 @@
         {
             "class": "Luxury",
             "doors": 2,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car37",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -484,7 +484,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car38",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -497,7 +497,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car39",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -510,7 +510,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car40",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -523,7 +523,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car41",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -536,7 +536,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car42",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -549,7 +549,7 @@
         {
             "class": "Luxury",
             "doors": 4,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car43",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -562,7 +562,7 @@
         {
             "class": "Luxury",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car44",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -575,7 +575,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car45",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -588,7 +588,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car46",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -601,7 +601,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car47",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -614,7 +614,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car48",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -627,7 +627,7 @@
         {
             "class": "Luxury",
             "doors": 2,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car49",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -640,7 +640,7 @@
         {
             "class": "Luxury",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car50",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -653,7 +653,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car51",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -666,7 +666,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car52",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -679,7 +679,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car53",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -692,7 +692,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car54",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -705,7 +705,7 @@
         {
             "class": "Luxury",
             "doors": 2,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car55",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -718,7 +718,7 @@
         {
             "class": "Luxury",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car56",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -731,7 +731,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car57",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -744,7 +744,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car58",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -757,7 +757,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car59",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -770,7 +770,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car60",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -783,7 +783,7 @@
         {
             "class": "Luxury",
             "doors": 2,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car61",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -796,7 +796,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car62",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -809,7 +809,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car63",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -822,7 +822,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car64",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -835,7 +835,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car65",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -848,7 +848,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car66",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -861,7 +861,7 @@
         {
             "class": "Luxury",
             "doors": 4,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car67",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -874,7 +874,7 @@
         {
             "class": "Luxury",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car68",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -887,7 +887,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car69",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -900,7 +900,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car70",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -913,7 +913,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car71",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -926,7 +926,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car72",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -939,7 +939,7 @@
         {
             "class": "Luxury",
             "doors": 2,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car73",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -952,7 +952,7 @@
         {
             "class": "Luxury",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car74",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -965,7 +965,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car75",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -978,7 +978,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car76",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -991,7 +991,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car77",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -1004,7 +1004,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car78",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -1017,7 +1017,7 @@
         {
             "class": "Luxury",
             "doors": 2,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car79",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -1030,7 +1030,7 @@
         {
             "class": "Luxury",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car80",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -1043,7 +1043,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car81",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -1056,7 +1056,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car82",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -1069,7 +1069,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car83",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -1082,7 +1082,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car84",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -1095,7 +1095,7 @@
         {
             "class": "Luxury",
             "doors": 2,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car85",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -1108,7 +1108,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car86",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -1121,7 +1121,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car87",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -1134,7 +1134,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car88",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -1147,7 +1147,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car89",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -1160,7 +1160,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car90",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -1173,7 +1173,7 @@
         {
             "class": "Luxury",
             "doors": 4,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car91",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -1186,7 +1186,7 @@
         {
             "class": "Luxury",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car92",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -1199,7 +1199,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car93",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -1212,7 +1212,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car94",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
@@ -1225,7 +1225,7 @@
         {
             "class": "Luxury",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car95",
             "imageStoragePath": "images/car5.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car5.jpg",
@@ -1238,7 +1238,7 @@
         {
             "class": "Luxury",
             "DOORS": 3,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car96",
             "imageStoragePath": "images/car6.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car6.jpg",
@@ -1251,7 +1251,7 @@
         {
             "class": "Luxury",
             "doors": 2,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car97",
             "imageStoragePath": "images/car1.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car1.jpg",
@@ -1264,7 +1264,7 @@
         {
             "class": "Luxury",
             "doors": 5,
-            "hasAC": "false",
+            "hasAC": false,
             "id": "car98",
             "imageStoragePath": "images/car2.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car2.jpg",
@@ -1277,7 +1277,7 @@
         {
             "class": "Mini",
             "doors": 3,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car99",
             "imageStoragePath": "images/car3.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car3.jpg",
@@ -1290,7 +1290,7 @@
         {
             "class": "Standard",
             "doors": 5,
-            "hasAC": "true",
+            "hasAC": true,
             "id": "car100",
             "imageStoragePath": "images/car4.jpg",
             "imageUrl": "https://raw.githubusercontent.com/bugventure/template-master-detail-ng/master/data/images/car4.jpg",
