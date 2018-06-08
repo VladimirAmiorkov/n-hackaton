@@ -95,17 +95,21 @@
                                             <rect key="frame" x="16" y="7" width="164" height="129"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2lS-Q4-jQZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="44.666666666666664" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="21"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WeF-ae-yy6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="44.666666666666664" height="21"/>
+                                                        <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WeF-ae-yy6">
+                                                            <rect key="frame" x="0.0" y="0.0" width="164" height="21"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5a-S0-sPt">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="44.666666666666664" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="20.333333333333332"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                     <color key="textColor" red="0.33784723281860352" green="0.42031127214431763" blue="0.99522048234939575" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2p-op-g9V">
+                                                                    <rect key="frame" x="0.0" y="20.333333333333332" width="164" height="0.66666666666666785"/>
+                                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </view>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>

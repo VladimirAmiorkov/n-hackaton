@@ -13,7 +13,8 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
     let URL_HEROES = "https://raw.githubusercontent.com/VladimirAmiorkov/n-hackaton/master/data/data.json";
-
+    let scaledDownImageWidth = 100;
+    let scaledDownImageHeight = 83;
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,8 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        // TODO: Change the separator according to thedesign
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         getJsonFromUrl();
@@ -111,8 +114,8 @@ class MasterViewController: UITableViewController {
 
         let object = objects[indexPath.row] as! Car
         cell.nameLabel!.text = object.name
-        let placeholderImage = UIImage(named: "car-placeholder")
-        cell.imageView?.image = placeholderImage
+        let resizedPlaceholderImage = self.resizedImage(image: UIImage(named: "car-placeholder")!, newSize: CGSize(width: self.scaledDownImageWidth, height: self.scaledDownImageHeight))
+        cell.imageView?.image = resizedPlaceholderImage
 
         URLSession.shared.dataTask(with: NSURL(string: object.imageUrl)! as URL, completionHandler: { (data, response, error) -> Void in
             
@@ -121,13 +124,10 @@ class MasterViewController: UITableViewController {
                 return
             }
             DispatchQueue.main.async(execute: { () -> Void in
-                let image = UIImage(data: data!)
-                if (image != nil) {
-                    let outImageFill = self.resizedImage(image: image!, newSize: CGSize(width: 100, height: 83))
-                    cell.imageView?.image = outImageFill
-                    cell.setNeedsLayout()
-                    cell.layoutIfNeeded()
-                }
+                let resizedCarImage = self.resizedImage(image: UIImage(data: data!)!, newSize: CGSize(width: self.scaledDownImageWidth, height: self.scaledDownImageHeight))
+                cell.imageView?.image = resizedCarImage
+                cell.setNeedsLayout()
+                cell.layoutIfNeeded()
             })
             
             // TODO see if this isnt better way
