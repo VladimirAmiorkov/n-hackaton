@@ -111,7 +111,7 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MasterTableViewCell
-
+        cell.separator.frame.size.width = (self.navigationController?.view.bounds.width)!
         let object = objects[indexPath.row] as! Car
         cell.nameLabel!.text = object.name
         cell.priceLabel!.text = String(object.price) + "/day"
@@ -210,5 +210,6 @@ class MasterTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var separator: UIView!
     
 }
