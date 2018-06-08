@@ -114,6 +114,7 @@ class MasterViewController: UITableViewController {
 
         let object = objects[indexPath.row] as! Car
         cell.nameLabel!.text = object.name
+        cell.priceLabel!.text = String(object.price) + "/day"
         let resizedPlaceholderImage = self.resizedImage(image: UIImage(named: "car-placeholder")!, newSize: CGSize(width: self.scaledDownImageWidth, height: self.scaledDownImageHeight))
         cell.imageView?.image = resizedPlaceholderImage
 
@@ -208,5 +209,6 @@ struct Car: CustomStringConvertible {
 class MasterTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var priceLabel: UILabel!
     
 }
