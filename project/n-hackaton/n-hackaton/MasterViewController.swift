@@ -32,6 +32,7 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         getJsonFromUrl();
     }
@@ -98,31 +99,79 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableViewAutomaticDimension
+        // TODO measure the irght height
+        return 200.0;
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MasterTableViewCell
 
         let object = objects[indexPath.row] as! Car
-        cell.textLabel!.text = object.name
+        cell.nameLabel!.text = object.name
+        let placeholderImage = UIImage(named: "car-placeholder")
+        cell.imageView?.image = placeholderImage
+
+        URLSession.shared.dataTask(with: NSURL(string: object.imageUrl)! as URL, completionHandler: { (data, response, error) -> Void in
+            
+            if error != nil {
+                print(error ?? "No Error")
+                return
+            }
+            DispatchQueue.main.async(execute: { () -> Void in
+                let image = UIImage(data: data!)
+                if (image != nil) {
+                    let outImageFill = self.resizedImage(image: image!, newSize: CGSize(width: 100, height: 83))
+                    cell.imageView?.image = outImageFill
+                    cell.setNeedsLayout()
+                    cell.layoutIfNeeded()
+                }
+            })
+            
+            // TODO see if this isnt better way
+//            OperationQueue.main.addOperation({
+//                let image = UIImage(data: data!)
+//                cell.imageView?.image = image
+//            })
+        }).resume()
         // TODO: implement the rich UI here for the list item template
+        
         return cell
     }
-
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func resizedImage(image: UIImage, newSize: CGSize) -> UIImage {
+        // Guard newSize is different
+        guard image.size != newSize else { return image }
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
+        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let tempImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return tempImage!
+        
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            objects.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
+//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        // Return false if you do not want the specified item to be editable.
+//        return true
+//    }
+
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            objects.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+//        }
+//    }
+
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+            }.resume()
     }
-
-
 }
 
 struct Car: CustomStringConvertible {
@@ -154,4 +203,10 @@ struct Car: CustomStringConvertible {
     var description: String {
         return name
     }
+}
+
+class MasterTableViewCell: UITableViewCell {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var picture: UIImageView!
+    
 }
