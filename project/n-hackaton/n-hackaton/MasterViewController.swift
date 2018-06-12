@@ -12,7 +12,7 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
-    let URL_HEROES = "https://raw.githubusercontent.com/VladimirAmiorkov/n-hackaton/master/data/data.json"
+    let URL_CARS = "https://raw.githubusercontent.com/VladimirAmiorkov/n-hackaton/master/project/n-hackaton/data/data.json"
     let scaledDownImageWidth = 100
     let scaledDownImageHeight = 83
     let mainBackgroundColor = UIColor.lightGray
