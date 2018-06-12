@@ -44,22 +44,24 @@ class MasterViewController: UITableViewController {
     func getJsonFromUrl(){
         let url = URL(string: "https://raw.githubusercontent.com/VladimirAmiorkov/n-hackaton/master/data/data.json")
         URLSession.shared.dataTask(with: (url)!, completionHandler: {(data, response, error) -> Void in
-            if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
-                var items = [Car]()
-                if let carsArray = jsonObj!.value(forKey: "cars") as? NSArray {
-                    for car in carsArray {
-                        if let carDict = car as? NSDictionary {
-                            let item = Car(dictionary: carDict)
-                            items.append(item)
+            if (error == nil) {
+                if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
+                    var items = [Car]()
+                    if let carsArray = jsonObj!.value(forKey: "cars") as? NSArray {
+                        for car in carsArray {
+                            if let carDict = car as? NSDictionary {
+                                let item = Car(dictionary: carDict)
+                                items.append(item)
+                            }
                         }
                     }
-                }
-                
-                OperationQueue.main.addOperation({
-                    items.forEach({ item in
-                        self.insertNewObject(item)
+                    
+                    OperationQueue.main.addOperation({
+                        items.forEach({ item in
+                            self.insertNewObject(item)
+                        })
                     })
-                })
+                }
             }
         }).resume()
     }
