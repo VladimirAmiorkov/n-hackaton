@@ -19,12 +19,6 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: Remove this if editing in the main page is not deisred
-        // Do any additional setup after loading the view, typically from a nib.
-//        navigationItem.leftBarButtonItem = editButtonItem
-
-//        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-//        navigationItem.rightBarButtonItem = addButton
         
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.isTranslucent = true;
@@ -36,9 +30,7 @@ class MasterViewController: UITableViewController {
         }
 
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        tableView.backgroundColor = mainBackgroundColor
-        
-        getJsonFromUrl();
+        self.getJsonFromUrl();
     }
     
     func getJsonFromUrl(){
@@ -46,11 +38,12 @@ class MasterViewController: UITableViewController {
         URLSession.shared.dataTask(with: (url)!, completionHandler: {(data, response, error) -> Void in
             if (error == nil) {
                 if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
+                     let resizedPlaceholderImage = self.resizedImage(image: UIImage(named: "car-placeholder")!, newSize: CGSize(width: self.scaledDownImageWidth, height: self.scaledDownImageHeight))
                     var items = [Car]()
                     if let carsArray = jsonObj!.value(forKey: "cars") as? NSArray {
                         for car in carsArray {
                             if let carDict = car as? NSDictionary {
-                                let item = Car(dictionary: carDict)
+                                let item = Car(dictionary: carDict, placeholderImage: resizedPlaceholderImage)
                                 items.append(item)
                             }
                         }
@@ -69,11 +62,6 @@ class MasterViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func insertNewObject(_ item: Car) {
@@ -108,31 +96,13 @@ class MasterViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return UITableViewAutomaticDimension
-        // TODO measure the irght height
+        // TODO measure the cell height
         return 200.0;
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MasterTableViewCell
         cell.selectionStyle = .none
-//        if (indexPath.row > 0) {
-//            let width = self.navigationController?.view.bounds.width;
-//            let cellSeparator = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 10))
-//            cellSeparator.backgroundColor = mainBackgroundColor
-//            cell.addSubview(cellSeparator)
-//            cell.setNeedsLayout()
-//            cell.layoutIfNeeded()
-//        } else {
-//            for view in cell.subviews {
-//                if (view .isKind(of: UIView.self) && view.backgroundColor == mainBackgroundColor) {
-//                    view.removeFromSuperview()
-//                }
-//            }
-//            
-//            cell.setNeedsLayout()
-//            cell.layoutIfNeeded()
-//        }
-        
         cell.separator.frame.size.width = (self.navigationController?.view.bounds.width)!
         let object = objects[indexPath.row] as! Car
         cell.nameLabel!.text = object.name
@@ -148,8 +118,7 @@ class MasterViewController: UITableViewController {
         cell.carIconLabel!.text = ""
         cell.cogsIconLabel!.text = ""
         cell.snowIconLabel!.text = ""
-        let resizedPlaceholderImage = self.resizedImage(image: UIImage(named: "car-placeholder")!, newSize: CGSize(width: self.scaledDownImageWidth, height: self.scaledDownImageHeight))
-        cell.imageView?.image = resizedPlaceholderImage
+        cell.imageView?.image = object.image
         URLSession.shared.dataTask(with: NSURL(string: object.imageUrl)! as URL, completionHandler: { (data, response, error) -> Void in
             
             if error != nil {
@@ -162,19 +131,12 @@ class MasterViewController: UITableViewController {
                 cell.setNeedsLayout()
                 cell.layoutIfNeeded()
             })
-            
-            // TODO see if this isnt better way
-//            OperationQueue.main.addOperation({
-//                let image = UIImage(data: data!)
-//                cell.imageView?.image = image
-//            })
         }).resume()
         
         return cell
     }
     
     func resizedImage(image: UIImage, newSize: CGSize) -> UIImage {
-        // Guard newSize is different
         guard image.size != newSize else { return image }
         
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
@@ -184,20 +146,6 @@ class MasterViewController: UITableViewController {
         return tempImage!
         
     }
-
-//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        // Return false if you do not want the specified item to be editable.
-//        return true
-//    }
-
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            objects.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//        }
-//    }
 
     func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -218,7 +166,8 @@ struct Car: CustomStringConvertible {
     let price: NSInteger
     let seats: NSInteger
     let transmission: String
-    init(dictionary: NSDictionary) {
+    var image: UIImage
+    init(dictionary: NSDictionary, placeholderImage: UIImage) {
         self.carClass = dictionary["class"] as? String ?? ""
         self.doors = dictionary["doors"] as? Int ?? 0
         self.hasAc = dictionary["hasAC"] as? Bool ?? false
@@ -230,6 +179,7 @@ struct Car: CustomStringConvertible {
         self.price = dictionary["price"] as? Int ?? 0
         self.seats = dictionary["seats"] as? Int ?? 0
         self.transmission = dictionary["transmission"] as? String ?? ""
+        self.image = placeholderImage
     }
     
     var description: String {
