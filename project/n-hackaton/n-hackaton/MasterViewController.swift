@@ -12,9 +12,9 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
-    let URL_HEROES = "https://raw.githubusercontent.com/VladimirAmiorkov/n-hackaton/master/data/data.json";
-    let scaledDownImageWidth = 100;
-    let scaledDownImageHeight = 83;
+    let URL_HEROES = "https://raw.githubusercontent.com/VladimirAmiorkov/n-hackaton/master/data/data.json"
+    let scaledDownImageWidth = 100
+    let scaledDownImageHeight = 83
     let mainBackgroundColor = UIColor.lightGray
 
     override func viewDidLoad() {
@@ -113,23 +113,23 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MasterTableViewCell
         cell.selectionStyle = .none
-        if (indexPath.row > 0) {
-            let width = self.navigationController?.view.bounds.width;
-            let cellSeparator = UIView(frame: CGRect(x: 0, y: 0, width: width!, height: 10))
-            cellSeparator.backgroundColor = mainBackgroundColor
-            cell.addSubview(cellSeparator)
-            cell.setNeedsLayout()
-            cell.layoutIfNeeded()
-        } else {
-            for view in cell.subviews {
-                if (view .isKind(of: UIView.self) && view.backgroundColor == mainBackgroundColor) {
-                    view.removeFromSuperview()
-                }
-            }
-            
-            cell.setNeedsLayout()
-            cell.layoutIfNeeded()
-        }
+//        if (indexPath.row > 0) {
+//            let width = self.navigationController?.view.bounds.width;
+//            let cellSeparator = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 10))
+//            cellSeparator.backgroundColor = mainBackgroundColor
+//            cell.addSubview(cellSeparator)
+//            cell.setNeedsLayout()
+//            cell.layoutIfNeeded()
+//        } else {
+//            for view in cell.subviews {
+//                if (view .isKind(of: UIView.self) && view.backgroundColor == mainBackgroundColor) {
+//                    view.removeFromSuperview()
+//                }
+//            }
+//            
+//            cell.setNeedsLayout()
+//            cell.layoutIfNeeded()
+//        }
         
         cell.separator.frame.size.width = (self.navigationController?.view.bounds.width)!
         let object = objects[indexPath.row] as! Car
@@ -142,7 +142,10 @@ class MasterViewController: UITableViewController {
         }
         
         cell.acLabel.text = hasAcText
-        cell.priceLabel!.text = String(object.price) + "/day"
+        cell.priceLabel!.text = "€" + String(object.price) + "/day"
+        cell.carIconLabel!.text = ""
+        cell.cogsIconLabel!.text = ""
+        cell.snowIconLabel!.text = ""
         let resizedPlaceholderImage = self.resizedImage(image: UIImage(named: "car-placeholder")!, newSize: CGSize(width: self.scaledDownImageWidth, height: self.scaledDownImageHeight))
         cell.imageView?.image = resizedPlaceholderImage
         URLSession.shared.dataTask(with: NSURL(string: object.imageUrl)! as URL, completionHandler: { (data, response, error) -> Void in
@@ -240,4 +243,7 @@ class MasterTableViewCell: UITableViewCell {
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var transitionLabel: UILabel!
     @IBOutlet weak var acLabel: UILabel!
+    @IBOutlet weak var carIconLabel: UILabel!
+    @IBOutlet weak var cogsIconLabel: UILabel!
+    @IBOutlet weak var snowIconLabel: UILabel!
 }

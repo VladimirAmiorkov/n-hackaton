@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88A7182A20CEB04900F53F17 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88A7182720CEB04900F53F17 /* fa-regular-400.ttf */; };
+		88A7182B20CEB04900F53F17 /* fa-brands-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88A7182820CEB04900F53F17 /* fa-brands-400.ttf */; };
+		88A7182C20CEB04900F53F17 /* fa-solid-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88A7182920CEB04900F53F17 /* fa-solid-900.ttf */; };
 		88C7D11B20C9234900DC3BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7D11A20C9234900DC3BD2 /* AppDelegate.swift */; };
 		88C7D11D20C9234900DC3BD2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7D11C20C9234900DC3BD2 /* MasterViewController.swift */; };
 		88C7D11F20C9234900DC3BD2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C7D11E20C9234900DC3BD2 /* DetailViewController.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88A7182720CEB04900F53F17 /* fa-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fa-regular-400.ttf"; path = "fonts/fa-regular-400.ttf"; sourceTree = "<group>"; };
+		88A7182820CEB04900F53F17 /* fa-brands-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fa-brands-400.ttf"; path = "fonts/fa-brands-400.ttf"; sourceTree = "<group>"; };
+		88A7182920CEB04900F53F17 /* fa-solid-900.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fa-solid-900.ttf"; path = "fonts/fa-solid-900.ttf"; sourceTree = "<group>"; };
 		88C7D11720C9234900DC3BD2 /* n-hackaton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "n-hackaton.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C7D11A20C9234900DC3BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88C7D11C20C9234900DC3BD2 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +85,9 @@
 		88C7D10E20C9234900DC3BD2 = {
 			isa = PBXGroup;
 			children = (
+				88A7182820CEB04900F53F17 /* fa-brands-400.ttf */,
+				88A7182720CEB04900F53F17 /* fa-regular-400.ttf */,
+				88A7182920CEB04900F53F17 /* fa-solid-900.ttf */,
 				88C7D11920C9234900DC3BD2 /* n-hackaton */,
 				88C7D13020C9234B00DC3BD2 /* n-hackatonTests */,
 				88C7D13B20C9234B00DC3BD2 /* n-hackatonUITests */,
@@ -233,8 +242,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				88C7D12720C9234B00DC3BD2 /* LaunchScreen.storyboard in Resources */,
+				88A7182A20CEB04900F53F17 /* fa-regular-400.ttf in Resources */,
 				88C7D12420C9234B00DC3BD2 /* Assets.xcassets in Resources */,
+				88A7182C20CEB04900F53F17 /* fa-solid-900.ttf in Resources */,
 				88C7D12220C9234900DC3BD2 /* Main.storyboard in Resources */,
+				88A7182B20CEB04900F53F17 /* fa-brands-400.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
